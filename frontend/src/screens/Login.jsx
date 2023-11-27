@@ -31,7 +31,10 @@ export default function Login() {
       };
 
       axios
-        .post("http://localhost:5000/loginuser", { email, password })
+        .post("https://mernback-e13i.onrender.com/loginuser", {
+          email,
+          password,
+        })
         .then((result) => {
           if (result.data.Success === true) {
             localStorage.setItem(
@@ -75,7 +78,7 @@ export default function Login() {
       toast.error("Please fill in the email address");
     } else {
       axios
-        .post("http://localhost:5000/user/sendotp", { email })
+        .post("https://mernback-e13i.onrender.com/user/sendotp", { email })
         .then((result) => {
           if (result.data.Success === true) {
             localStorage.setItem("OTP", result.data.otp);

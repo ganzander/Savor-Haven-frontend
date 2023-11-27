@@ -27,7 +27,7 @@ function Profile() {
       return;
     } else {
       axios
-        .post("http://localhost:5000/changePassword", {
+        .post("https://mernback-e13i.onrender.com/changePassword", {
           email,
           password,
           confirmPassword,
@@ -65,7 +65,7 @@ function Profile() {
     const { email } = user;
 
     axios
-      .post("http://localhost:5000/uploadImage", {
+      .post("https://mernback-e13i.onrender.com/uploadImage", {
         email,
         pic,
       })

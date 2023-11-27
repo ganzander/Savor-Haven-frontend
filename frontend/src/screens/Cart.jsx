@@ -18,7 +18,7 @@ export default function Cart() {
     toast.success("Cart Emptied");
     dispatch(setCart([]));
     axios
-      .post("http://localhost:5000/cartItems", {
+      .post("https://mernback-e13i.onrender.com/cartItems", {
         data: [],
         currentUserAuthToken,
       })
@@ -38,7 +38,9 @@ export default function Cart() {
     );
 
     axios
-      .post("http://localhost:5000/api/create-checkout-session", { data })
+      .post("https://mernback-e13i.onrender.com/api/create-checkout-session", {
+        data,
+      })
       .then((result) => {
         if (result.data.Success === "true") {
           const { sessionId } = result.data;
@@ -52,7 +54,10 @@ export default function Cart() {
   }
   if (data.length !== 0) {
     axios
-      .post("http://localhost:5000/cartItems", { data, currentUserAuthToken })
+      .post("https://mernback-e13i.onrender.com/cartItems", {
+        data,
+        currentUserAuthToken,
+      })
       .then((result) => {
         if (result.data.Success === "true") {
           console.log("Cart posted to backend");
@@ -63,7 +68,9 @@ export default function Cart() {
   }
   React.useEffect(() => {
     axios
-      .post("http://localhost:5000/cartUser", { currentUserAuthToken })
+      .post("https://mernback-e13i.onrender.com/cartUser", {
+        currentUserAuthToken,
+      })
       .then((result) => {
         if (result.data.Success === "true") {
           dispatch(setCart(result.data.cartData));

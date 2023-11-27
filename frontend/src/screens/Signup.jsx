@@ -22,7 +22,7 @@ export default function Signup() {
       alert("Please fill in the form completely");
     } else {
       axios
-        .post("http://localhost:5000/createuser", {
+        .post("https://mernback-e13i.onrender.com/createuser", {
           name,
           email,
           password,

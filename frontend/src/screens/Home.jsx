@@ -14,16 +14,18 @@ export default function Home() {
   const [foodCategory, setFoodCategory] = useState([]);
 
   React.useEffect(() => {
-    axios.get("http://localhost:5000/foodItems").then((result) => {
+    axios.get("https://mernback-e13i.onrender.com/foodItems").then((result) => {
       if (result.data.Success === "true") {
         setFoodItem(result.data.foodItem);
       }
     });
-    axios.get("http://localhost:5000/foodCategory").then((result) => {
-      if (result.data.Success === "true") {
-        setFoodCategory(result.data.foodCategory);
-      }
-    });
+    axios
+      .get("https://mernback-e13i.onrender.com/foodCategory")
+      .then((result) => {
+        if (result.data.Success === "true") {
+          setFoodCategory(result.data.foodCategory);
+        }
+      });
   }, []);
 
   return (
