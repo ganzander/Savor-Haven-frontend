@@ -21,7 +21,7 @@ export default function Admin() {
       alert("Please fill in the form completely");
     } else {
       axios
-        .post("https://mernback-e13i.onrender.com/createFood", {
+        .post("http://localhost:5000/createFood", {
           categoryName,
           name,
           imgurl,

@@ -7,9 +7,7 @@ export default function MyOrder() {
   const currentUserAuthToken = localStorage.getItem("authToken");
   React.useEffect(() => {
     axios
-      .post("https://mernback-e13i.onrender.com/orderedItems", {
-        currentUserAuthToken,
-      })
+      .post("http://localhost:5000/orderedItems", { currentUserAuthToken })
       .then((result) => {
         if (
           result.data.Success === "true" &&
