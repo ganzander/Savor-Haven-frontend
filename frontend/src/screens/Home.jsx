@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,Suspense } from "react";
 import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
@@ -29,7 +29,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <Suspense fallback={"Loading"}>
       <div>
         <Navbar />
       </div>
@@ -85,6 +85,6 @@ export default function Home() {
       <div>
         <Footer />
       </div>
-    </>
+    </Suspense>
   );
 }
