@@ -19,8 +19,8 @@ import Profile from "./screens/Profile";
 import Admin from "./screens/Admin";
 import AdminPrivateRoute from "./AdminPrivateRoute";
 import LoginPrivateRoute from "./LoginPrivateRoute";
-import LoginViaOTP from "./screens/loginViaOTP.jsx";
-import Error from "./screens/Error.jsx";
+import LoginViaOTP from "./screens/loginViaOTP";
+import Error from "./screens/Error";
 
 function App() {
   return (
@@ -28,11 +28,9 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
-
           <Route path="/login" element={<Login />} />
           <Route path="/loginOtp" element={<LoginViaOTP />} />
           <Route path="/createuser" element={<Signup />} />
-
           <Route element={<LoginPrivateRoute />}>
             <Route path="/myorder" element={<MyOrder />} />
             <Route path="/profile" element={<Profile />} />
@@ -40,11 +38,9 @@ function App() {
             <Route path="/cancel" element={<Cancel />} />
             <Route path="/cart" element={<Cart />} />
           </Route>
-
           <Route element={<AdminPrivateRoute />}>
             <Route path="/admin" element={<Admin />} />
           </Route>
-
           <Route path="*" element={<Error />} />
         </Routes>
         <Toaster />
