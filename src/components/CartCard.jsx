@@ -10,7 +10,7 @@ export default function CartCard(props) {
 
   async function deleteCartItem(item) {
     await axios
-      .post("http://localhost:5000/deleteCartItem", {
+      .post("https://mernback-e13i.onrender.com/deleteCartItem", {
         itemId: item._id,
         currentUserAuthToken,
       })

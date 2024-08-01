@@ -14,7 +14,7 @@ export default function Card(props) {
 
   async function addNewCart(foodItem) {
     await axios
-      .post("http://localhost:5000/cartItems", {
+      .post("https://mernback-e13i.onrender.com/cartItems", {
         data: foodItem,
         currentUserAuthToken,
       })

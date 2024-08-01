@@ -25,7 +25,7 @@ export default function Admin() {
     } else {
       setImgUrl(imgurl);
       axios
-        .post("http://localhost:5000/createFood", {
+        .post("https://mernback-e13i.onrender.com/createFood", {
           categoryName,
           name,
           imgurl,

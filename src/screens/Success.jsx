@@ -12,7 +12,9 @@ export default function Success() {
 
   useEffect(() => {
     axios
-      .post("http://localhost:5000/cartUser", { currentUserAuthToken })
+      .post("https://mernback-e13i.onrender.com/cartUser", {
+        currentUserAuthToken,
+      })
       .then((result) => {
         if (result.data.Success === "true") {
           setData(result.data.cartData);
@@ -23,7 +25,7 @@ export default function Success() {
   if (data.length !== 0) {
     const dataWithTime = [...data, indianTime];
     axios
-      .post("http://localhost:5000/order-Items", {
+      .post("https://mernback-e13i.onrender.com/order-Items", {
         dataWithTime,
         currentUserAuthToken,
       })
@@ -35,7 +37,7 @@ export default function Success() {
         }
       });
     axios
-      .post("http://localhost:5000/deleteItems", {
+      .post("https://mernback-e13i.onrender.com/deleteItems", {
         data: [],
         currentUserAuthToken,
       })

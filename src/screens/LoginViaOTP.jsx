@@ -36,7 +36,7 @@ export default function LoginViaOTP() {
       toast.error("Please fill in the email address");
     } else {
       axios
-        .post("http://localhost:5000/user/sendotp", { email })
+        .post("https://mernback-e13i.onrender.com/user/sendotp", { email })
         .then((result) => {
           if (result.data.Success === true) {
             localStorage.setItem("OTP", result.data.otp);

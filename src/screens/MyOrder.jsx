@@ -10,7 +10,7 @@ export default function MyOrder() {
   React.useEffect(() => {
     const { email } = user;
     axios
-      .post("http://localhost:5000/orderedItems", { email })
+      .post("https://mernback-e13i.onrender.com/orderedItems", { email })
       .then((result) => {
         if (
           result.data.Success === "true" &&

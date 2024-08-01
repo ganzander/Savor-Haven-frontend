@@ -11,7 +11,7 @@ export default function Cart() {
 
   async function deleteCart() {
     await axios
-      .post("http://localhost:5000/deleteItems", {
+      .post("https://mernback-e13i.onrender.com/deleteItems", {
         data: [],
         currentUserAuthToken,
       })
@@ -29,7 +29,7 @@ export default function Cart() {
       "pk_test_51O16qiSBdH4uYdkWOeS0zS4REySu3MmnRpO4gD7Uycx23DPPqQe04DwcZ3o5lTRDq5W6fiL6mINwoVjJI1xTKG5s00kiiGDAYq"
     );
     axios
-      .post("http://localhost:5000/api/create-checkout-session", {
+      .post("https://mernback-e13i.onrender.com/api/create-checkout-session", {
         data: cartData,
       })
       .then((result) => {
@@ -46,7 +46,9 @@ export default function Cart() {
 
   useEffect(() => {
     axios
-      .post("http://localhost:5000/cartUser", { currentUserAuthToken })
+      .post("https://mernback-e13i.onrender.com/cartUser", {
+        currentUserAuthToken,
+      })
       .then((result) => {
         if (result.data.Success === "true") {
           setCartData(result.data.cartData);

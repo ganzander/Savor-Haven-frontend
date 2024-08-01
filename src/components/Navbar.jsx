@@ -21,7 +21,7 @@ function Navbar(props) {
   useEffect(() => {
     if (currentUserAuthToken) {
       axios
-        .post("http://localhost:5000/cartUser", {
+        .post("https://mernback-e13i.onrender.com/cartUser", {
           currentUserAuthToken,
         })
         .then((result) => {
