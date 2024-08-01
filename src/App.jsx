@@ -13,7 +13,7 @@ import Profile from "./screens/Profile";
 import Admin from "./screens/Admin";
 import AdminPrivateRoute from "./AdminPrivateRoute";
 import LoginPrivateRoute from "./LoginPrivateRoute";
-import LoginViaOTP from "./screens/loginViaOTP";
+import LoginViaOTP from "./screens/LoginViaOTP";
 import Error from "./screens/Error";
 
 function App() {
