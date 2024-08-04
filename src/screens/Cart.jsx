@@ -7,6 +7,7 @@ import { loadStripe } from "@stripe/stripe-js";
 
 export default function Cart() {
   const currentUserAuthToken = localStorage.getItem("authToken");
+  const user = JSON.parse(localStorage.getItem("currentUser"));
   const [cartData, setCartData] = useState([]);
 
   async function deleteCart() {
@@ -25,12 +26,11 @@ export default function Cart() {
   }
 
   async function makePayment() {
-    const stripe = await loadStripe(
-      "pk_test_51O16qiSBdH4uYdkWOeS0zS4REySu3MmnRpO4gD7Uycx23DPPqQe04DwcZ3o5lTRDq5W6fiL6mINwoVjJI1xTKG5s00kiiGDAYq"
-    );
+    const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLISH_KEY);
     axios
       .post("https://mernback-e13i.onrender.com/api/create-checkout-session", {
         data: cartData,
+        user,
       })
       .then((result) => {
         if (result.data.Success === "true") {

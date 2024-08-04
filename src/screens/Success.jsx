@@ -29,25 +29,13 @@ export default function Success() {
         dataWithTime,
         currentUserAuthToken,
       })
-      .then((result) => {
-        if (result.data.Success === "true") {
-          console.log("order posted to backend");
-        } else {
-          console.log("error occured while posting order");
-        }
-      });
+      .then(() => {});
     axios
       .post("https://mernback-e13i.onrender.com/deleteItems", {
         data: [],
         currentUserAuthToken,
       })
-      .then((result) => {
-        if (result.data.Success === "true") {
-          console.log("Cart posted to backend");
-        } else {
-          console.log("error occured while placing order");
-        }
-      });
+      .then(() => {});
   }
 
   useEffect(() => {
