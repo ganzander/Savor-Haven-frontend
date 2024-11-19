@@ -22,21 +22,24 @@ export default function Footer() {
           © Savor Haven
         </Link>
         <a
-          href="https://www.instagram.com/ganesh_mangla/"
+          // href="https://www.instagram.com/ganesh_mangla/"
+          href="https://www.instagram.com/"
           className=" d-flex justify-content-center align-items-center text-center mx-4"
           style={{ color: "black", textDecoration: "none" }}
         >
           <FontAwesomeIcon icon={faInstagram} />
         </a>
         <a
-          href="https://www.facebook.com/people/Ganesh-Mangla/pfbid02xZWG2Fm6LZz54Wq5d1hvvVRKWYiqGswitKLgYttqWiwoVYqojM3WU7gvJXKb9ZGal/"
+          // href="https://www.facebook.com/people/Ganesh-Mangla/pfbid02xZWG2Fm6LZz54Wq5d1hvvVRKWYiqGswitKLgYttqWiwoVYqojM3WU7gvJXKb9ZGal/"
+          href="https://www.facebook.com/"
           className=" d-flex justify-content-center align-items-center text-center mx-4"
           style={{ color: "black" }}
         >
           <FontAwesomeIcon icon={faFacebook} />
         </a>
         <a
-          href="https://www.linkedin.com/in/ganesh-mangla-958a392a8/"
+          // href="https://www.linkedin.com/in/ganesh-mangla-958a392a8/"
+          href="https://www.linkedin.com/"
           className=" d-flex justify-content-center align-items-center text-center mx-4"
           style={{ color: "black" }}
         >
